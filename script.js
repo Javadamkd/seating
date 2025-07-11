@@ -1,9 +1,11 @@
 const base = "https://script.google.com/macros/s/AKfycbx1oQdDOFbFeBAItb5NWaZk6VhrI3tSFSb-XdSFmutFrDceOijzoO-aTDkF5azTf2Fyxg/exec";
 
 function loadStudents() {
+  console.log("Button clicked!");
   fetch(base + "?action=getStudents")
     .then(res => res.json())
     .then(data => {
+      console.log(data);
       let html = `<h3>Students</h3><ul>`;
       data.forEach(([cls, name, adno]) => {
         html += `<li>${cls} - ${name} (${adno})</li>`;
