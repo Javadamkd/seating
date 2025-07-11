@@ -1,4 +1,4 @@
-const base = "https://script.google.com/macros/s/YOUR_DEPLOYED_URL/exec";
+const base = "https://script.google.com/macros/s/AKfycbx1oQdDOFbFeBAItb5NWaZk6VhrI3tSFSb-XdSFmutFrDceOijzoO-aTDkF5azTf2Fyxg/exec";
 
 function loadStudents() {
   fetch(base + "?action=getStudents")
