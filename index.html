@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Exam Seating App</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Test Script Fetch</title>
 </head>
 <body>
-  <h2>Exam Seating Arrangement</h2>
-  <nav>
-    <button onclick="loadStudents()">Students</button>
-    <button onclick="loadRooms()">Rooms</button>
-    <button onclick="generateAllocation()">Generate</button>
-    <button onclick="generatePDF()">Download PDF</button>
-  </nav>
+  <h1>Test Connection</h1>
+  <button onclick="testFetch()">Click to Fetch</button>
+  <div id="output">Waiting...</div>
 
-  <div id="output"></div>
+  <script>
+    const base = "https://script.google.com/macros/s/AKfyc.../exec"; // Replace with your script URL
 
-  <script src="script.js"></script>
+    function testFetch() {
+      document.getElementById('output').innerText = "Fetching...";
+      fetch(base)
+        .then(res => res.text())
+        .then(txt => {
+          document.getElementById('output').innerText = txt;
+        })
+        .catch(err => {
+          document.getElementById('output').innerText = "Error: " + err;
+        });
+    }
+  </script>
 </body>
 </html>
